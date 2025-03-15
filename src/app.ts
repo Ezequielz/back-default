@@ -1,17 +1,28 @@
 import { envs } from './config/envs';
 import { createServer } from './presentation/server';
 import { AppRoutes } from './presentation/routes';
+import { database } from './infrastructure/databse/connection/database';
 
-function main() {
-    const server = createServer({
-        port: envs.PORT,
-        routes: AppRoutes.routes,
-    });
 
-    // Retorna el objeto para poder cerrar el servidor si es necesario
-    return server;
+async function main() {
+    try {
+        await database.connect(); // Conectar la base de datos primero
+        console.log('Database connected successfully');
+
+        const server = createServer({
+            port: envs.PORT,
+            routes: AppRoutes.routes,
+        });
+
+        console.log(`Server running on port ${envs.PORT}`);
+
+        return server;
+    } catch (error) {
+        console.error('Error starting the application:', error);
+        process.exit(1); // Salir con código de error si algo falla
+    }
 }
 
 (async () => {
-    main()
-})()
+    await main();
+})();

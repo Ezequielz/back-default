@@ -1,6 +1,9 @@
 import { Router } from 'express';
 import { AuthController } from './AuthController';
 
+// AuthRouter
+// /api/auth 
+
 export const AuthRouter = (): Router => {
     const router = Router();
 

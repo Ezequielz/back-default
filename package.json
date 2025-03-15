@@ -6,7 +6,7 @@
     "dev": "tsnd --respawn --clear --env-file=.env src/app.ts",
     "build": "rimraf ./dist && tsc",
     "start": "npm run build && node dist/app.js",
-    "seed:mongo": "ts-node-dev ./src/infrastructure/databse/seed/seedMongo.ts"
+    "seed:mongo": "ts-node-dev ./src/infrastructure/database/seed/seedMongo.ts"
   },
   "keywords": [],
   "author": "ezequielz",

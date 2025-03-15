@@ -1,7 +1,7 @@
 import { envs } from './config/envs';
 import { createServer } from './presentation/server';
 import { AppRoutes } from './presentation/routes';
-import { database } from './infrastructure/databse/connection/database';
+import { database } from './infrastructure/database/connection/database';
 
 
 async function main() {

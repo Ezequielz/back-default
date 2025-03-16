@@ -2,7 +2,7 @@ import { UserDataSource } from '../../../domain/datasources/user.datasource';
 import { UserUpdateDTO } from '../../../domain/dtos/auth/user.dto';
 import { UserEntity } from '../../../domain/entities/user/user.entity';
 import { createUserEntityFromObject } from '../../../domain/entities/user/user.mapper';
-import { UserModel } from '../../databse/mongo/models/user.model';
+import { UserModel } from '../../database/mongo/models/user.model';
 
 
 
